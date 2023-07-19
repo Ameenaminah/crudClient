@@ -8,6 +8,7 @@ import EditCrud from "./components/EditCrud";
 function App() {
   const [data, setData] = useState([]);
   const [editingItem, setEditingItem] = useState(null);
+  const [successModal, setSuccessModal] = useState(false)
 
   //retrieve data from local storage
   // useEffect(() => {
@@ -42,6 +43,10 @@ function App() {
       method: "DELETE",
     });
     const data = await res.json();
+    if(res.ok){
+      setSuccessModal(true);
+      console.log(successModal);
+    }
     console.log(data);
     console.log(itemId);
   };
@@ -57,6 +62,7 @@ function App() {
                 // data={data}
                 handleEdit={handleEdit}
                 handleDelete={handleDelete}
+                successModal={successModal}
               />
             }
           />

@@ -53,9 +53,6 @@ getACrud()
     <div>
       <h1 className="text-2xl text-center mb-5">Edit CRUD</h1>
       <CrudForm
-        // handleSubmit={handleFormSubmit}
-        // defaultTitle={editingItem.title}
-        // defaultDescription={editingItem.description}
         handleSubmit={handleFormSubmit}
         handleTitleChange={handleTitleChange}
         handleDescriptionChange={handleDescriptionChange}

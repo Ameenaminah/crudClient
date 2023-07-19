@@ -4,7 +4,8 @@ import { FaPlus } from "react-icons/fa";
 import { MdModeEditOutline, MdDelete } from "react-icons/md";
 import { BsThreeDotsVertical } from "react-icons/bs";
 
-const CrudApp = ({ handleDelete, handleEdit }) => {
+const CrudApp = ({ handleDelete, handleEdit, successModal }) => {
+  
   const navigate = useNavigate();
   const [click, setClick] = useState(false);
   const [data, setData] = useState([]);
@@ -24,7 +25,7 @@ const CrudApp = ({ handleDelete, handleEdit }) => {
     setData(data);
   };
   return (
-    <div className="">
+    <div className="relative">
       <div className="flex justify-between items-center mb-4">
         <h1 className="text-2xl">CRUD APP</h1>
         <Link
@@ -37,7 +38,9 @@ const CrudApp = ({ handleDelete, handleEdit }) => {
           New Crud
         </Link>
       </div>
-      <div className="flex justify-center items-center text-[4rem] mt-[3rem]">{loader && <i className="fa-solid fa-spinner fa-spin"></i>}</div>
+      <div className="flex justify-center items-center text-[4rem] mt-[3rem]">
+        {loader && <i className="fa-solid fa-spinner fa-spin"></i>}
+      </div>
       {data.map((item, index) => (
         <div className="bg-[#dcd9d9] p-3 rounded-2xl mb-10" key={index}>
           <div className="flex justify-between items-center mb-4">
@@ -72,6 +75,17 @@ const CrudApp = ({ handleDelete, handleEdit }) => {
           </div>
         </div>
       ))}
+      {successModal && (
+        <div className="successModal">
+          <h1 className="mb-8">Items Successfully Deleted</h1>
+          <a
+            href="/"
+            className="bg-[#54c954] cursor-pointer px-6 py-2 text-base text-white rounded-[100px]"
+          >
+            Ok
+          </a>
+        </div>
+      )}
     </div>
   );
 };
