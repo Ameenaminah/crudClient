@@ -13,7 +13,7 @@ const EditCrud = ({ item, handleUpdate }) => {
 getACrud()
   },[])
   const getACrud = async () => {
-    const res = await fetch(`http://localhost:8000/api/v1/test/${id}`);
+    const res = await fetch(`https://crudserver-ppap.onrender.com/api/v1/test/${id}`);
     const data = await res.json()
     if (res.ok){
       console.log(data);
@@ -25,7 +25,7 @@ getACrud()
 
   const handleFormSubmit = async(event) => {
     event.preventDefault();
-    const res = await fetch(`http://localhost:8000/api/v1/test/${id}`, {
+    const res = await fetch(`https://crudserver-ppap.onrender.com/api/v1/test/${id}`, {
       method: "PATCH",
       body: JSON.stringify({ title, description }),
       headers: {

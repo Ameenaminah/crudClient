@@ -15,7 +15,7 @@ function App() {
   // }, []);
 
   // const getAllCruds = async () => {
-  //   const res = await fetch("http://localhost:8000/api/v1");
+  //   const res = await fetch("https://crudserver-ppap.onrender.com//api/v1");
   //   const data = await res.json();
   //   console.log(data);
   //   setData(data);
@@ -38,7 +38,7 @@ function App() {
   // Function to delete a movie from the list
 
   const handleDelete = async (itemId) => {
-    const res = await fetch(`http://localhost:8000/api/v1/test/${itemId}`, {
+    const res = await fetch(`https://crudserver-ppap.onrender.com/api/v1/test/${itemId}`, {
       method: "DELETE",
     });
     const data = await res.json();

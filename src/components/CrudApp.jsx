@@ -17,7 +17,7 @@ const CrudApp = ({ handleDelete, handleEdit }) => {
 
   const getAllCruds = async () => {
     setLoader(true);
-    const res = await fetch("http://localhost:8000/api/v1");
+    const res = await fetch("https://crudserver-ppap.onrender.com/api/v1");
     if (res) setLoader(false);
     const data = await res.json();
     console.log(data);

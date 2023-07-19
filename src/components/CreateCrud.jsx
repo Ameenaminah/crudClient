@@ -13,7 +13,7 @@ const [success, setSuccess] = useState("");
 const handleFormSubmit = async (event) => {
   
    event.preventDefault();
-  const res = await fetch("http://localhost:8000/api/v1/test", {
+  const res = await fetch("https://crudserver-ppap.onrender.com/api/v1/test", {
     method: "POST",
     body: JSON.stringify({ title, description }),
     headers: {
